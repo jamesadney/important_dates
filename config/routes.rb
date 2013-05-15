@@ -1,4 +1,7 @@
 ImportantDates::Application.routes.draw do
+  root to: redirect("/events")
+
+  resources :events
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
