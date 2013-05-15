@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_filter :find_event, only: [:show, :edit, :update, :destroy]
+
   def index
   end
 
@@ -15,5 +17,11 @@ class EventsController < ApplicationController
   end
 
   def show
+  end
+
+  private
+
+  def find_event
+    @event = Event.find(params[:id])
   end
 end

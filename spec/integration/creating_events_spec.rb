@@ -18,5 +18,7 @@ feature 'Creating Events' do
     page.should have_content "Event has been created."
     event = Event.find_by_title EVENT_TITLE
     page.current_url.should == event_url(event)
+
+    page.should have_content EVENT_TITLE
   end
 end
