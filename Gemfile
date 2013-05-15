@@ -23,16 +23,15 @@ end
 gem 'jquery-rails'
 
 group :development, :test do
-	gem 'rspec-rails', '~> 2.0'
+	gem 'rspec-rails', '~> 2.11'
 	gem 'pry-rails'
   gem 'pry-doc'
   gem 'pry-debugger'
- 
 end
 
 group :test do
-  gem 'launchy' 
-  gem 'capybara'
+  gem 'launchy'
+  gem 'capybara', '~>1.1.2'
 end
 
 # To use ActiveModel has_secure_password
