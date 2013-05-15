@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe DatesController do
+describe EventsController do
 
 end
