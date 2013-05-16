@@ -14,6 +14,12 @@ feature 'Viewing Events' do
                        :date => Date.today)
   end
 
+  let!(:yesterday) do
+    FactoryGirl.create(:event,
+                   :title => "Event Yesterday",
+                   :date => Date.today - 1)
+  end
+
   before do
     visit '/'
   end
@@ -30,6 +36,11 @@ feature 'Viewing Events' do
   scenario "events are shown with most recent events first" do
     page.text.should match(/Event Today.+Event Tomorrow/m)
   end
-  scenario "only upcoming events are shown"
+
+  scenario "only upcoming events are shown" do
+    page.should have_content("Event Today")
+    page.should have_content("Event Tomorrow")
+    page.should_not have_content("Event Yesterday")
+  end
 
 end
